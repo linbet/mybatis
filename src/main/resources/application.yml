@@ -1,0 +1,24 @@
+#jasypt:
+#  encryptor:
+#    password: 123456!@#
+#
+#info:
+#  username: ENC(qfx2gh/2tpjy1PRSEtor3Q==)
+#  password: ENC(AA16KX1GfHXbA1AUNIzBmw==)
+
+
+#  jdbc:mysql://localhost:3306/test?useSSL=false&&serverTimezone=UTC&&useUnicode=true&&characterEncoding=utf8
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useSSL=false&&serverTimezone=UTC&&useUnicode=true&&characterEncoding=utf8
+    username: root
+    password: root
+#    driver-class-name: com.mysql.jdbc.Driver
+
+
+#mybatis:
+#  config-location: classpath:mybatis-config.xml
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.test.entity

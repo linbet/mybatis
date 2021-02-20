@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--引入js-->
+    <script type="text/javascript"src="/webjars/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+
+    <form action="/guest" method="post">
+        <input type="hidden" name="_method" value="put">
+
+        <input type="text" name="name" value="">
+        <a th:href="@{/guest/toUpdate/}+${name}">编辑</a>
+
+
+        <button th:attr="del_url=@{/guest/}+${guest.name}" name="del_button">删除</button>
+        <input type="submit" value="提交">
+    </form>
+
+<script>
+    $(function () {
+        $("button[name='del_button']").click(function () {
+            $("#del_form").prop("action",$(this).attr("del_url")).submit
+        })
+    })
+</script>
+</body>
+</html>
